@@ -16,13 +16,13 @@ import javax.servlet.http.HttpServlet;
 @WebServlet("/HelloWorld")
 public class HelloWorld extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	public void service(ServletRequest request, ServletResponse response  )
 	throws ServletException, IOException{
 		response.setContentType("text/html");
 		PrintWriter writer =response.getWriter();
 		writer.print("<html><body><h1>Hola Mundo</h1>"+new Date(0).toString()+"</body></html>");
-		
-		
+
+
 	}
 }
