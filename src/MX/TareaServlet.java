@@ -1,4 +1,4 @@
-package mx;
+package MX;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,12 +13,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import UMG.Category;
 import UMG.Programa;
-import UMG.Task;
 import UMG.State;
+import UMG.Task;
 
-
-public class AñadirTareaServlet extends HttpServlet {
+/**
+ * Servlet implementation class TareaServlet
+ */
+public class TareaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+
+    public TareaServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -26,7 +34,7 @@ public class AñadirTareaServlet extends HttpServlet {
 		PrintWriter escribir = response.getWriter();
 		escribir.println("<html>");
 		escribir.println("	<head>");
-		escribir.println("		<title>Añadir Tarea</title>");
+		escribir.println("		<title>Anadir Tarea</title>");
 		escribir.println("	</head>");
 		escribir.println("	<body>");
 		escribir.println("		<form method=\"POST\">");
@@ -75,9 +83,8 @@ public class AñadirTareaServlet extends HttpServlet {
 		escribir.println("</html>");
 	}
 
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Task task = new Task();
 
 		task.setTitle(request.getParameter("title"));
@@ -111,4 +118,5 @@ public class AñadirTareaServlet extends HttpServlet {
 		PrintWriter escribir = response.getWriter();
 		escribir.print("<html><body>" + task.Html() + "</body></html>");
 	}
+
 }
